@@ -1,0 +1,91 @@
+.contact {
+  background-color: $bg-text-color-1;
+  border-radius: 15px;
+  z-index: 1;
+  padding: 0;
+
+  h2 {
+    font-family: $font-R-black;
+    color: #9063a6;
+    font-size: 2.250em;
+    font-weight: 900;
+    line-height: 36px;
+    text-align: center;
+    margin: 70px 0 75px 0;
+    padding: 0 10%;
+  }
+
+  .text {
+    font-family: $font-R-regular;
+    color: $text-color-1;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 90px;
+
+    @media #{$bootstrap-xs} {
+      text-align: center;
+    }
+
+    @media #{$bootstrap-sm} {
+      text-align: left;
+    }
+  }
+
+  .info {
+    font-family: $font-R-black;
+    color: $text-color-1;
+    font-size: 1em;
+    font-weight: 900;
+    line-height: 24px;
+    margin-bottom: 90px;
+
+    @media #{$bootstrap-xs} {
+      text-align: center;
+    }
+
+    @media #{$bootstrap-sm} {
+      text-align: left;
+      max-width: 175px;
+    }
+  }
+
+  .write-btn {
+    background-color: $bg-text-color-2;
+    height: 40px;
+    border-radius: 50px;
+    margin-bottom: -15px;
+    z-index: 2;
+    left: 50%;
+    margin-top: -20px;
+    font-family: $font-R-black;
+    color: $bg-text-color-1;
+    font-size: 1.150em;
+    font-weight: 900;
+    line-height: 15px;
+    text-align: center;
+    transform: scaleX(1.0001);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+    border: none;
+
+    @include contact-write-btn(175px, $bootstrap-sm);
+  }
+
+  .map-content {
+    padding: 0;
+    margin-bottom: 90px;
+
+
+    .map {
+      width: 100%;
+      height: 60vh;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

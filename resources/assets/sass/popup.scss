@@ -1,0 +1,120 @@
+.modal-dialog {
+  position: relative;
+  margin-top: 60px;
+  z-index:250;
+  @media #{$bootstrap-xs} {
+    width: 95%;
+  }
+  @media #{$bootstrap-sm} {
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    margin-left: -300px;
+  }
+}
+.modal.contact {
+
+  h5 {
+    color: $bg-text-color-2;
+    width: 80%;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 900;
+    font-family: $font-R-black, arial, sans-serif;
+    margin: 50px auto 15px auto;
+  }
+  p {
+    padding: 0 22%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .modal-content {
+
+    border-radius: 7px;
+    width: 600px;
+    height: 750px;
+    margin: auto;
+    @media #{$bootstrap-xs} {
+      max-width: 100%;
+    }
+    form {
+      width: 75%;
+      margin: auto;
+      & > label {
+        font-family: inherit;
+        width: 100%;
+        color: rgba(76, 80, 93, 0.7);
+        display: block;
+        font-size: 16px;
+        margin: 40px 0;
+      }
+
+      button {
+        display: block;
+        border: none;
+        color: #fff;
+        outline: none;
+        box-shadow: inset 0 0 6px rgba(249, 175, 162, 0.75);
+        background: $bg-text-color-2;
+        width: 36%;
+        transition: .3s ease;
+        font-size: 22px;
+        margin-top: 17px;
+        padding: 10px 0;
+        line-height: 20px;
+        margin-bottom: 10px;
+        font-weight: 900;
+        font-family: $font-R-black;
+        border-radius: 50px;
+        &:active {
+          box-shadow: inset 0 0 12px rgba(52, 78, 134, 0.75);
+        }
+        position: absolute;
+        left: 50%;
+        margin-left: -18%;
+      }
+    }
+    input {
+      height: 50px;
+      border-radius: 50px;
+    }
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      padding: 0 10px 0 30px;
+      outline: none;
+      min-width: 100%;
+      margin: 2px 0 0 0;
+      font-size: 16px;
+      display: block;
+      max-width: 100%;
+      border: none;
+      color:lightslategray;
+      background: rgb(242, 242, 242);
+    }
+    textarea {
+      min-height: 200px;
+      padding-top: 30px;
+      border-radius: 50px;
+    }
+
+  }
+}
+.thx {
+  font-size: 3em;
+  font-family: FuturalPT, arial, sans-serif;
+  text-align: center;
+  background: #fbf8f7;
+  font-weight: 300;
+  color: rgb(146, 146, 146);
+}
+
+.modal-open .modal {
+  z-index: 10000;
+  background-color: transparent;
+}
+
+.close-btn {
+  float: right;
+
+}

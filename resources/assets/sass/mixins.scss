@@ -1,0 +1,46 @@
+$bootstrap-xs: "(max-width:767px)";
+$bootstrap-sm: "(min-width:768px)";
+$bootstrap-md: "(min-width:992px)";
+$bootstrap-lg: "(min-width:1200px)";
+$bootstrap-xl: "(min-width:1400px)";
+
+@mixin content-position($width, $top, $media) {
+  @media #{$media} {
+    position: absolute;
+    width: $width;
+    top: $top;
+    margin-left: - ($width / 2);
+  }
+}
+
+
+@mixin text-position($width, $height, $media) {
+  @media #{$media} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $width;
+    height: $height;
+    margin-left: - ($width / 2);
+    margin-top: - ($height / 2);
+  }
+}
+
+@mixin hr-position($width, $height, $media) {
+  @media #{$media} {
+    opacity: 1;
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    width: $width;
+    height: $height;
+    margin-left: - ($width / 2);
+    margin-top: - ($height / 2);
+  }
+}
+
+@mixin contact-write-btn ($width, $media){
+  position: absolute;
+  width: $width;
+  margin-left: - ($width/2);
+}

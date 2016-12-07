@@ -1,0 +1,99 @@
+.footer-width {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color:  $bg-text-color-2;
+
+
+  @media #{$bootstrap-xs} {
+    width: 75%;
+  }
+
+  @media #{$bootstrap-sm} {
+    width: 75%;
+
+    .main-block {
+      margin-bottom: 10px;
+    }
+  }
+
+
+  p {
+    font-family: $font-R-regular;
+    color:  $bg-text-color-1;
+    font-size: 1em;
+    line-height: 24px;
+    font-weight: 300;
+    @media #{$bootstrap-xs} {
+      text-align: center;
+      margin: 40px 0 0 0;
+    }
+    @media #{$bootstrap-sm} {
+      text-align: left;
+      margin: 40px 0 40px 0;
+    }
+
+  }
+
+  .right-ft {
+    margin: 40px 0 10px 0;
+  }
+
+  span {
+    font-family: $font-R-black;
+    color:  $bg-text-color-1;
+    font-size: 1.125em;
+    font-weight: 900;
+    line-height: 24px;
+    @media #{$bootstrap-xs} {
+      text-align: center;
+    }
+  }
+
+  .left-block {
+
+    @media #{$bootstrap-xs} {
+      display: block;
+      float: left;
+      width: 100%;
+
+    }
+
+    @media #{$bootstrap-sm} {
+      display: inline-block;
+      float: left;
+      margin-left: 5%;
+      max-width: 335px;
+    }
+
+  }
+  .right-block {
+
+    @media #{$bootstrap-xs} {
+      display: block;
+      float: left;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+
+    }
+
+    @media #{$bootstrap-sm} {
+      display: inline-block;
+      float: right;
+      margin-right: 5%;
+    }
+  }
+}
+
+//@media #{$bootstrap-xs} {
+//  .right-block {
+//    text-align: center;
+//    margin-bottom: 40px;
+//  }
+//
+//}
+
+
+
+
+
