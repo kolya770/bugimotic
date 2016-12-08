@@ -1,0 +1,19 @@
+.ibox {
+  margin-top: 5%; }
+  .ibox .table .info td {
+    vertical-align: middle;
+    background-color: white; }
+  .ibox .section-create {
+    width: 180px; }
+  .ibox .section-edit {
+    width: 50px; }
+  .ibox .section-delete {
+    width: 66px; }
+  .ibox .dis-none {
+    display: none; }
+  .ibox .style-editor {
+    min-height: 300px;
+    border: 1px solid  #d9d9d9;
+    font-size: 18px; }
+
+/*# sourceMappingURL=app.css.map */
