@@ -32,7 +32,7 @@ elixir(function(mix) {
         .styles (
             [
                 'libraries/bootstrap.min.css',
-                'libraries/bootstrap-theme.min.css',
+                // 'libraries/bootstrap-theme.min.css',
                 'libraries/font-awesome.min.css',
                 'libraries/summernote.css',
                 'app.css'

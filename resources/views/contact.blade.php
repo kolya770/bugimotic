@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.layout-main')
+
+@section('title')
+    Bugimotic
+@endsection
 
 @section('content')
     <div class="content">

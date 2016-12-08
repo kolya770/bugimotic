@@ -1,93 +1,99 @@
-<?php
-    require_once 'Mobile_Detect.php';
-    $detect = new Mobile_Detect();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bugimotic</title>
-    <link rel="stylesheet" href="{{ elixir('css/main.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title')</title>
+    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="admin/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="admin/css/animate.css" rel="stylesheet">
+    <link href="admin/css/style.css" rel="stylesheet">
+    <link href="admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script>
+        window.Laravel = <?php echo json_encode([
+            'csrfToken' => csrf_token(),
+        ]); ?>
+    </script>
 </head>
-<body>
+<body class="gray-bg">
+    @yield('content')
+    {{--<div id="app">--}}
+        {{--<nav class="navbar navbar-default navbar-static-top">--}}
+            {{--<div class="container">--}}
+                {{--<div class="navbar-header">--}}
 
-<div id="page-preloader">
-    <div class="cssload-container">
-        <div class="cssload-loader-inner">
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-            <div class="cssload-cssload-loader-line-wrap-wrap">
-                <div class="cssload-loader-line-wrap"></div>
-            </div>
-        </div>
-    </div>
-</div>
+                    {{--<!-- Collapsed Hamburger -->--}}
+                    {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+                        {{--<span class="sr-only">Toggle Navigation</span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                        {{--<span class="icon-bar"></span>--}}
+                    {{--</button>--}}
 
-<div class="modal fade contact popup-wrapper" id="contactUs"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <a href="" class="close-btn"><img src="img/close.png"></a>
-                <h5>Напишите нам</h5>
-                <p>Что бы заказать обратный звонок введите свое имя и номер телефона</p>
-                <form id="contForm" method="post" action="mail.php" name="contact">
-                    <label>
-                        <input type="text" name="name" required="required" placeholder="Имя" id="name" >
-                    </label>
-                    <label>
-                        <input type="tel" name="tel" required="required" placeholder="Номер телефона" id="tel">
-                    </label>
-                    <label>
-                        <textarea class="animated" name="message" placeholder="Ваше сообщение"></textarea>
-                    </label>
-                    <button type="submit">Отправить</button>
-                </form>
-                <!-- <div class="text-center"><span>Fields marked with* are mandatory</span></div> -->
-            </div>
-        </div>
-    </div>
-</div>
+                    {{--<!-- Branding Image -->--}}
+                    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+                        {{--{{ config('app.name', 'Laravel') }}--}}
+                    {{--</a>--}}
+                {{--</div>--}}
 
-<div class="modal fade" id="thanks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="thanks-message">
-                    <p class="thx">Спасибо!<br/>Мы вам перезвоним!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                {{--<div class="collapse navbar-collapse" id="app-navbar-collapse">--}}
+                    {{--<!-- Left Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav">--}}
+                        {{--&nbsp;--}}
+                    {{--</ul>--}}
 
-@include('partials.first-screen')
-@include('partials.navbar')
-@yield('content')
-@include('partials.footer')
+                    {{--<!-- Right Side Of Navbar -->--}}
+                    {{--<ul class="nav navbar-nav navbar-right">--}}
+                        {{--<!-- Authentication Links -->--}}
+                        {{--@if (Auth::guest())--}}
+                            {{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
+                            {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
+                        {{--@else--}}
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                                    {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
+                                {{--</a>--}}
 
-<script src="{{ elixir('js/main.js') }}"></script>
+                                {{--<ul class="dropdown-menu" role="menu">--}}
+                                    {{--<li>--}}
+                                        {{--<a href="{{ url('/logout') }}"--}}
+                                            {{--onclick="event.preventDefault();--}}
+                                                     {{--document.getElementById('logout-form').submit();">--}}
+                                            {{--Logout--}}
+                                        {{--</a>--}}
 
-<?php if ( $detect->isMobile() ): ?>
-    <script src="js/mobile.js"></script>
-<?php endif ?>
+                                        {{--<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">--}}
+                                            {{--{{ csrf_field() }}--}}
+                                        {{--</form>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                        {{--@endif--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</nav>--}}
 
+        {{--@yield('content')--}}
+    {{--</div>--}}
+
+    <!-- Scripts -->
+    <!-- Mainly scripts -->
+    <script src="admin/js/jquery-2.1.1.js"></script>
+    <script src="admin/js/bootstrap.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="admin/js/plugins/iCheck/icheck.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+        });
+    </script>
 </body>
 </html>

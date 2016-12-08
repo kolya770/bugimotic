@@ -3,29 +3,36 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
+use App\Footer;
+//use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class FooterController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('admin');
+//        $this->middleware('admin');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $user = Auth::user();
 
-        return view('admin.index', [
-            'auth_user' => $user
-        ]);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -36,7 +43,7 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -58,7 +65,9 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $footer = Footer::findOrFail($id);
+
+        return view('admin.footer.edit', compact('footer'));
     }
 
     /**
@@ -70,7 +79,10 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $footer = Footer::findOrFail($id);
+        $footer->update($request->all());
+
+        return redirect('/dashboard/footer/1/edit');
     }
 
     /**

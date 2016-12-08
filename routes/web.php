@@ -20,3 +20,9 @@ Route::get('/categories', 'LandingController@categories');
 Route::post('admin/ajaximage',  'Api\ImageController@uploadImage');
 Route::post('admin/ajaximage2', 'Api\ImageController@dropzoneUploadImages');
 
+Auth::routes();
+
+Route::get('/dashboard', 'Admin\AdminController@index');
+Route::resource('dashboard/blog', 'Admin\BlogController');
+Route::resource('dashboard/footer', 'Admin\FooterController');
+Route::resource('dashboard/contact', 'Admin\ContactController');
