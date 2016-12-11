@@ -12,13 +12,16 @@
 */
 
 Route::get('/', 'LandingController@index');
+Route::get('/blog/{id}', 'BlogController@show');
 Route::get('/contacts', 'LandingController@contacts');
-Route::get('/categories-article', 'LandingController@categoriesArticle');
+//Route::get('/categories-article', 'LandingController@categoriesArticle');
 Route::get('/categories', 'LandingController@categories');
+Route::get('/gallery', 'LandingController@gallery');
+
 
 //UploadImage
 Route::post('admin/ajaximage',  'Api\ImageController@uploadImage');
-Route::post('admin/ajaximage2', 'Api\ImageController@dropzoneUploadImages');
+//Route::post('admin/ajaximage2', 'Api\ImageController@dropzoneUploadImages');
 
 Auth::routes();
 

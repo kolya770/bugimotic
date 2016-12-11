@@ -42,7 +42,7 @@
     border: none;
     background-color:  $bg-text-color-1;
     height: 60px;
-    z-index: 9999;
+    z-index: 1000;
     width: 75%;
 
     .my-navbar {
@@ -148,7 +148,7 @@
       width: 25%;
       left: 50%;
       margin-left: - 12.5%;
-      z-index: 99999;
+      z-index: 1001;
        img {
          width: 100%;
        }
@@ -157,9 +157,18 @@
     @include content-position(200px, 0, $bootstrap-sm);
     @include content-position(270px, 0, $bootstrap-xl);
 
-
     @media #{$bootstrap-sm} {
-      z-index: 99999;
+      z-index: 1001;
+      img {
+        width: 75%;
+      }
+    }
+    @media (max-width: 850px) and (min-width: 768px) {
+      img {
+        width: 100px;
+      }
+    }
+    @media #{$bootstrap-md} {
       img {
         width: 200px;
       }

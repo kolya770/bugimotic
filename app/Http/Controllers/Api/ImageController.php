@@ -27,14 +27,14 @@ class ImageController extends Controller
     }
 
 
-    public function dropzoneUploadImages()
-    {
-        $path = public_path().'/uploads/';
-        $files = Images::create(Input::file('image'));
-
-        foreach($files as $file) {
-            $fileName = $file->getClientOriginalName();
-            $file->move($path, $fileName);
-        }
-    }
+//    public function dropzoneUploadImages()
+//    {
+//        $path = public_path().'/uploads/';
+//        $files = Images::create(Input::file('image'));
+//
+//        foreach($files as $file) {
+//            $fileName = $file->getClientOriginalName();
+//            $file->move($path, $fileName);
+//        }
+//    }
 }

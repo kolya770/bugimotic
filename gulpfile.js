@@ -15,7 +15,7 @@ require('laravel-elixir-vue-2');
 
 elixir(function(mix) {
 
-    mix.sass(['app.scss'], 'resources/assets/css/app.css')
+    mix
 
         .scripts(
             [
@@ -35,9 +35,13 @@ elixir(function(mix) {
                 // 'libraries/bootstrap-theme.min.css',
                 'libraries/font-awesome.min.css',
                 'libraries/summernote.css',
+                // 'libraries/lg-fb-comment-box.css',
+                // 'libraries/lg-transitions.css',
+                // 'libraries/lightgallery.css',
                 'app.css'
             ],
 
             'public/css/main.css'
-        );
+        )
+        .sass(['app.scss'], 'resources/assets/css/app.css')
 });

@@ -2,7 +2,7 @@
   background-color: $bg-text-color-1;
   border-radius: 15px;
   z-index: 1;
-  padding: 0;
+  padding: 0 0 70px 0;
 
   h2 {
     font-family: $font-R-black;
@@ -16,7 +16,6 @@
   }
 
   .image-click {
-    padding: 0;
     overflow: hidden;
     height: 100%;
     clip: rect(0, auto, 18em, auto);

@@ -1,22 +1,19 @@
 .footer-width {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
+  border-radius: 15px;
   background-color:  $bg-text-color-2;
-
-
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 2;
   @media #{$bootstrap-xs} {
     width: 75%;
   }
-
   @media #{$bootstrap-sm} {
     width: 75%;
-
     .main-block {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
   }
-
-
   p {
     font-family: $font-R-regular;
     color:  $bg-text-color-1;
@@ -25,73 +22,75 @@
     font-weight: 300;
     @media #{$bootstrap-xs} {
       text-align: center;
-      margin: 40px 0 0 0;
+      margin: 45px 0 0 0;
     }
     @media #{$bootstrap-sm} {
-      text-align: left;
-      margin: 40px 0 40px 0;
+      text-align: center;
+      margin: 45px 0 0 0;
     }
-
+    @media #{$bootstrap-md} {
+      text-align: left;
+      margin: 45px 0 45px 50px;
+    }
   }
-
-  .right-ft {
-    margin: 40px 0 10px 0;
+  .right-block {
+    .right-ft {
+      @media #{$bootstrap-xs} {
+        margin: 25px 0 10px 0;
+      }
+      @media #{$bootstrap-sm} {
+        margin: 25px 0 10px 0;
+      }
+      @media #{$bootstrap-md} {
+        margin: 45px 0 10px 0;
+      }
+    }
+    @media #{$bootstrap-xs} {
+      text-align: center;
+    }
+    @media #{$bootstrap-sm} {
+      text-align: center;
+    }
+    @media #{$bootstrap-md} {
+      min-width: 265px;
+      float: right;
+      margin-right: 50px;
+    }
   }
-
   span {
     font-family: $font-R-black;
     color:  $bg-text-color-1;
     font-size: 1.125em;
     font-weight: 900;
     line-height: 24px;
+    float: left;
     @media #{$bootstrap-xs} {
       text-align: center;
+      float: none;
+    }
+    @media #{$bootstrap-sm} {
+      text-align: center;
+      float: none;
+    }
+    @media #{$bootstrap-md} {
+      float: left;
+      text-align: left;
     }
   }
-
   .left-block {
-
     @media #{$bootstrap-xs} {
       display: block;
       float: left;
       width: 100%;
-
     }
-
     @media #{$bootstrap-sm} {
       display: inline-block;
       float: left;
       margin-left: 5%;
-      max-width: 335px;
-    }
-
-  }
-  .right-block {
-
-    @media #{$bootstrap-xs} {
-      display: block;
-      float: left;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-
-    }
-
-    @media #{$bootstrap-sm} {
-      display: inline-block;
-      float: right;
-      margin-right: 5%;
+      min-width: 335px;
     }
   }
 }
-
-//@media #{$bootstrap-xs} {
-//  .right-block {
-//    text-align: center;
-//    margin-bottom: 40px;
-//  }
-//
-//}
 
 
 

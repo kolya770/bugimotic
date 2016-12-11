@@ -1,0 +1,24 @@
+.content-gallery {
+  width: 75%;
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 70px;
+  .lightgallery {
+    text-align: center;
+    padding: 30px 15px;
+      a {
+        width: 32%;
+        display: inline-block;
+        text-align: center;
+        margin-top: 5px;
+        @media #{$bootstrap-xs} {
+          width: 100%;
+        }
+          img {
+            width: 100%;
+          }
+      }
+  }
+}

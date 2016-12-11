@@ -32,7 +32,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right right-nav">
-                    <li><a href="#">Фотогалерея</a></li>
+                    <li><a href="{{ url('/gallery') }}">Фотогалерея</a></li>
                     <li><a href="{{ url('/contacts') }}" class="position-cn">Контакты</a></li>
                 </ul>
             </div>

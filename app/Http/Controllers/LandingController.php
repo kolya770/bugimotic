@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Footer;
 use App\Blog;
 use App\Contact;
+use App\Helpers\Helper;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -52,4 +53,9 @@ class LandingController extends Controller
         return view('categories', compact('footer', 'contact'));
     }
 
+    public function gallery()
+    {
+        $footer = Footer::find(1);
+        return view('gallery', compact('footer'));
+    }
 }
